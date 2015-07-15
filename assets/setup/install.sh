@@ -64,6 +64,8 @@ fi
 # some gems complain about missing database.yml, shut them up!
 cp config/database.yml.example config/database.yml
 
+bundle config mirror.https://rubygems.org https://ruby.taobao.org
+
 bundle install -j$(nproc) --without development test --path vendor/bundle
 
 # finalize redmine installation
